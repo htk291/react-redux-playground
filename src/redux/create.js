@@ -1,8 +1,4 @@
-import { createStore as _createStore } from 'redux'
+import { createStore } from 'redux'
+import reducer from 'REDUX/reducer'
 
-export default function createStore(history, client, data) {
-  const reducer = require('REDUX/reducer')
-  const store = _createStore(reducer, data)
-
-  return store
-}
+export default createStore(reducer)
