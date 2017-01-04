@@ -1,4 +1,4 @@
-const SEND = '@@SEND'
+import { SEND } from 'REDUX/actions'
 
 const initialState = {
   value: null,

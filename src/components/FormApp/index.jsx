@@ -1,7 +1,7 @@
 import React from 'react'
 
 class FormInput extends React.Component {
-  send(e) {
+  send = (e) => {
     e.preventDefault()
     this.props.handleClick(this.myInput.value.trim())
     this.myInput.value = ''
@@ -11,7 +11,7 @@ class FormInput extends React.Component {
     return (
       <form>
         <input type="text" ref={ref => this.myInput = ref} defaultValue="" />
-        <button onClick={e => this.send(e)}>Send</button>
+        <button onClick={this.send}>Send</button>
       </form>
     )
   }

@@ -1,16 +1,6 @@
 import { connect } from 'react-redux'
 import FormApp from 'COMPONENTS/FormApp'
-
-const SEND = '@@SEND'
-
-// Action Creators
-function send(value) {
-  // Action
-  return {
-    type: SEND,
-    value,
-  }
-}
+import { send } from 'REDUX/actions'
 
 function mapStateToProps(reducers) {
   return {
