@@ -13,3 +13,11 @@ export function change(value) {
     value,
   }
 }
+
+export const UPDATE = '@@UPDATE'
+export function update(list) {
+  return {
+    type: UPDATE,
+    list,
+  }
+}

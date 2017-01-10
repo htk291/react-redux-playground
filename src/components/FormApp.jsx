@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {send} from 'REDUX/actions'
-import {Link} from 'react-router'
 
 class FormInput extends React.Component {
   send = (e) => {
@@ -16,7 +15,6 @@ class FormInput extends React.Component {
           <input type="text" ref={ref => this.myInput = ref} defaultValue="" />
           <button onClick={this.send}>Send</button>
         </form>
-        <Link to="hoge">to hoge</Link>
       </div>
     )
   }
