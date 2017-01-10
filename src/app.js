@@ -1,18 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 import store from 'REDUX/create'
-import AppContainer from 'CONTAINERS/AppContainer'
-import InputContainer from 'CONTAINERS/InputContainer'
+import App from 'COMPONENTS/App'
+import Form from 'COMPONENTS/FormApp'
+import InputCount from 'COMPONENTS/InputCount'
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={hashHistory}>
-      <Route path="/" component={AppContainer} />
-      <Route path="/hoge" component={InputContainer}/>
-    </Router>
+    <Router history={browserHistory}>
+      <Route path="/" component={App} >
+        <IndexRoute component={Form} />
+        <Route path="hoge" component={InputCount}/>
+      </Route>
+    </Router> 
   </Provider>,
   document.querySelector('#root')
 )

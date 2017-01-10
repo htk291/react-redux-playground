@@ -5,7 +5,7 @@ const initialState = {
   isValid: false
 }
 
-export default function inputReducer(state = initialState, action = {}) {
+export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
     case CHANGE:
       return Object.assign({}, state, {

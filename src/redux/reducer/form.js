@@ -1,10 +1,10 @@
 import { SEND } from 'REDUX/actions'
 
 const initialState = {
-  value: null,
+  value: '',
 }
 
-export default function formReducer(state = initialState, action = {}) {
+export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
     case SEND:
       return Object.assign({}, state, {
