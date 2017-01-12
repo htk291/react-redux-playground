@@ -4,14 +4,14 @@ import { change } from 'REDUX/actions'
 
 
 class InputCount extends React.Component {
-  change = (e) => {
+  change = e => {
     this.props.change(e.target.value)
   }
   render() {
     return (
       <div>
-        <input type='text' value={ this.props.value } onChange={this.change} />
-        <span>{ this.props.isValid ? '✓' : '✕' }</span>
+        <input type='text' value={this.props.value} onChange={this.change} />
+        <span>{this.props.isValid ? '✓' : '✕'}</span>
         <h1>{this.props.value}</h1>
       </div>
     )

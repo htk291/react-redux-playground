@@ -11,7 +11,7 @@ export default class AppComponent extends React.Component {
           <li><Link to="/list">List</Link></li>
         </ul>
 
-        { this.props.children }
+        {this.props.children}
       </div>
     )
   }
