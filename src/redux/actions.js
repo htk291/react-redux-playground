@@ -21,3 +21,19 @@ export function update(list) {
     list,
   }
 }
+
+export const OPEN_MODAL = '@@OPEN_MODAL'
+export function toggleModal(isOpen) {
+  return {
+    type: OPEN_MODAL,
+    isOpen,
+  }
+}
+
+export const ANIMATION = '@@ANIMATION'
+export function animate(value) {
+  return {
+    type: ANIMATION,
+    value,
+  }
+}

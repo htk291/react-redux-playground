@@ -3,9 +3,10 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import { update } from 'REDUX/actions'
 
-class Conditions extends React.Component {
+class ConditionsComponent extends React.Component {
   search = e => {
-    this.props.search({value: this.refs.input.value})
+    axios.get('data.json', {params: {value: this.refs.input.value}})
+      .then(res => {this.props.update(res.data)})
   }
   render() {
     return (
@@ -16,16 +17,16 @@ class Conditions extends React.Component {
     )
   }
 }
+const Conditions = connect(
+  state => ({value: state.list.value}),
+  {update}
+)(ConditionsComponent)
 
 class List extends React.Component {
-  search = args => {
-    axios.get('data.json', {params: args})
-      .then(res => {this.props.update(res.data)})
-  }
   render() {
     return (
       <div>
-        <Conditions search={this.search} />
+        <Conditions />
         {this.props.list.map(x => (
           <div key={x.key}>
             <span>{x.a}</span>
@@ -40,5 +41,5 @@ class List extends React.Component {
 
 export default connect(
   state => ({list: state.list.list}),
-  {update}
+  {}
 )(List)

@@ -19,16 +19,9 @@ class InputCount extends React.Component {
 }
 
 export default connect(
-  state => ({value: state.input.value, isValid: state.input.isValid}),
+  state => ({
+    value: state.input.value,
+    isValid: state.input.isValid
+  }),
   {change}
 )(InputCount)
-
-// exports.default = (0, _reactRedux.connect)(
-//   function(state) {
-//     return {
-//       value: state.input.value,
-//       isValid: state.input.isValid
-//     };
-//   },
-//   { change: _actions.change }
-// )(InputCount);

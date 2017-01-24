@@ -1,15 +1,14 @@
-import { UPDATE } from 'REDUX/actions'
+import { OPEN_MODAL } from 'REDUX/actions'
 
 const initialState = {
-  list: [],
-  value: ''
+  isOpen: false
 }
 
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
-    case UPDATE:
+    case OPEN_MODAL:
       return Object.assign({}, state, {
-        list: action.list
+        isOpen: !state.isOpen,
       })
   }
   return state
